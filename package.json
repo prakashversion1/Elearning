@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/prakashversion1/MultiVision",
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
   }
 }
