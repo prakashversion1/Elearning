@@ -13,6 +13,10 @@
   "keywords": [
     "MEAN"
   ],
+  "engines":{
+    "node":"0.12.2",
+    "npm":"2.7.4"
+  },
   "author": "Prakash Joshi <prakashjoshiversion1@gmail.com>",
   "license": "ISC",
   "bugs": {
