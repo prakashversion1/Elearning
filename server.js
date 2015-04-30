@@ -46,7 +46,10 @@ db.once('open',function callback(){
 });
 
 app.get('/partials/*',function(req,res){
-	res.render('partials/'+ req.params);
+    var partialPath = req.path
+    while(partialPath.charAt(0) === '/')
+        partialPath = partialPath.substr(1);
+	res.render(partialPath);
 });
 
 app.get('*',function(req,res){
