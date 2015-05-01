@@ -13,7 +13,12 @@ require('./server/config/express')(app,config);
 
 require('./server/config/mongoose')(config);
 
-passport.use(new LocalStrategy(
+var User = mongoose.model('User');
+
+passport.use(new LocalStrategy({
+        usernameField:'username',
+        passwordField:'password'
+    },
     function(username,password,done){
         User.findOne({userName:username}).exec(function(err,user){
             if(user){
@@ -42,6 +47,7 @@ passport.deserializeUser(function(id,done){
 });
 
 require('./server/config/routes')(app);
+
 
 app.listen(config.port);
 console.log("Application starting on port : " + config.port);

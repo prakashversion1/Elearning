@@ -29,5 +29,5 @@ module.exports = function(app,config){
         }
     ));
     //server static contents from the public directory
-    app.use(express.static(path.join(config.rootPath, 'public')));
+    app.use(express.static('public'));
 }
