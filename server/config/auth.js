@@ -6,7 +6,9 @@ exports.authenticate = function(req,res,next){
         if(!user){res.send({success:false})}
         req.logIn(user,function(err){
             if(err){return next(err);}
-            res.send({success:true,user:user})
+            else{
+                res.send({success:true,user:user})
+            }
         });
     })(req,res,next);
 }
