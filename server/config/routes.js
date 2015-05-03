@@ -1,14 +1,13 @@
 var auth = require('./auth');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var users = require('../controller/users');
 
 module.exports = function(app){
 
-    app.get('/api/users',auth.requiresApiLogin,function(req,res){
-        User.find({}).exec(function(err,collection){
-            res.send(collection);
-        });
-    });
+    app.get('/api/users',auth.requiresRole('ADMIN'),users.getUsers);
+
+    app.post('/api/users',users.createUser);
 
     app.get('/partials/*',function(req,res){
         var partialPath = req.path;
