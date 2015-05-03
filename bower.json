@@ -1,11 +1,11 @@
 {
   "name": "Elearning",
   "version": "0.0.0",
-  "homepage": "https://github.com/prakashversion1/MultiVision",
+  "homepage": "https://github.com/prakashversion1/Elearning.git",
   "authors": [
     "prakashversion1 <prakashjoshiversion1@gmail.com>"
   ],
-  "description": "Multivision app",
+  "description": "Elearning app",
   "license": "MIT",
   "private": true,
   "ignore": [
