@@ -9,6 +9,9 @@ module.exports = function(app){
 
     app.post('/api/users',users.createUser);
 
+    app.put('/api/users',users.updateUser);
+
+
     app.get('/partials/*',function(req,res){
         var partialPath = req.path;
         while(partialPath.charAt(0) === '/')
