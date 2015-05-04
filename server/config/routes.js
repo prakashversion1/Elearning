@@ -2,6 +2,7 @@ var auth = require('./auth');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var users = require('../controller/users');
+var courses = require('../controller/courses');
 
 module.exports = function(app){
 
@@ -11,6 +12,9 @@ module.exports = function(app){
 
     app.put('/api/users',users.updateUser);
 
+    app.get('/api/courses',courses.getCourses);
+
+    app.get('/api/courses/:id',courses.getCourseById);
 
     app.get('/partials/*',function(req,res){
         var partialPath = req.path;
@@ -27,6 +31,11 @@ module.exports = function(app){
         req.logout();
         res.end();
     });
+
+    app.all('/api/*',function(req,res){
+        res.send(404);
+        res.end();
+    })
 
     app.get('*',function(req,res){
         res.render('index',{

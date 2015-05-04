@@ -2,8 +2,8 @@ body {
   padding-top: 55px;
 }
 .navbar-inverse {
-  background-color: #5ff5b7;
-  border-color: #5ff5b7;
+  background-color: #149c82;
+  border-color: #149c82;
 }
 .navbar-header a.navbar-brand {
   margin-top: -15px;
@@ -29,5 +29,11 @@ footer p {
   top: 70px;
 }
 .toast-success {
-  background-color: #5ff5b7;
+  background-color: #149c82;
+}
+.top-padding-med {
+  padding-top: 10px;
+}
+.margin-left-med {
+  margin-left: 10px;
 }
